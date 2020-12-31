@@ -1,5 +1,6 @@
 package th.test.core.di
 
+import org.koin.android.ext.koin.androidContext
 import th.test.core.data.interceptor.BaseInterceptor
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -11,6 +12,8 @@ import th.test.core.data.api.BaseRetrofitBuilder
 import th.test.core.data.api.BaseUrl
 import th.test.core.data.interceptor.AuthHeaderInterceptor
 import th.test.core.extension.base64ToPlain
+import th.test.core.provider.PreferenceProvider
+import th.test.core.provider.SharedPreferenceProvider
 
 private const val DI_BASE_URL = "DI_BASE_URL"
 private const val DI_DEFAULT_INTERCEPTOR = "DI_DEFAULT_INTERCEPTOR"
@@ -50,7 +53,13 @@ val coreModule = module {
         BaseInterceptor()
     }
 
-    single<Converter.Factory> { GsonConverterFactory.create() }
+    single<Converter.Factory> {
+        GsonConverterFactory.create()
+    }
+
+    single<PreferenceProvider> {
+        SharedPreferenceProvider(androidContext())
+    }
 
     single(named(name = DI_BASE_URL)) {
         BaseUrl(url = DOMAIN_API_URL.base64ToPlain())

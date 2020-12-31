@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="defaultViewMargin">20dp</dimen>
+    <dimen name="defaultViewElevation">2dp</dimen>
+    <dimen name="defaultViewLittleMargin">7dp</dimen>
+    <dimen name="defaultButtonHeight">52dp</dimen>
+    <dimen name="defaultViewRadius">15dp</dimen>
+</resources>
+

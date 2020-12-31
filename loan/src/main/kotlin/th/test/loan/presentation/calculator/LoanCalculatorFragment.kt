@@ -14,11 +14,26 @@ class LoanCalculatorFragment : Fragment() {
         fun getNewInstance(): LoanCalculatorFragment = LoanCalculatorFragment()
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        initView()
+        bindViewModel()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_loan_calculator, container, false)
+    }
+
+    private fun initView() {
+
+    }
+
+    private fun bindViewModel() {
+
     }
 
 }

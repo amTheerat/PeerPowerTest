@@ -15,4 +15,26 @@
         <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
         <item name="android:statusBarColor">@android:color/white</item>
     </style>
+
+    <style name="MaterialTextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <!-- Button Style H1 -->
+    <style name="MaterialTextButton.H1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MaterialTextButton.H1.WhiteDodgerBlue">
+        <item name="backgroundTint">@color/color_state_dodgerblue_dustygray</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 </resources>
