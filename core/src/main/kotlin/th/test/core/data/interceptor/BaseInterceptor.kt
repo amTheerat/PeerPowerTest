@@ -5,10 +5,6 @@ import okhttp3.Request
 import okhttp3.Response
 
 open class BaseInterceptor : Interceptor {
-
-    companion object {
-    }
-
     override fun intercept(chain: Interceptor.Chain): Response {
         val mapHeader = mutableMapOf<String, String>()
         addHeaders(mapHeader)
@@ -26,5 +22,7 @@ open class BaseInterceptor : Interceptor {
 
     open fun addHeaders(mapHeader: MutableMap<String, String>) {
         //Add commond header params here
+        mapHeader["X-Requested-With"] = "XMLHttpRequest"
+        mapHeader["Accept"] = "application/json"
     }
 }

@@ -5,14 +5,14 @@ import th.test.auth.data.repo.AccessTokenRepository
 import th.test.core.utils.UseCaseResult
 
 interface GetAccessTokenUseCase {
-    suspend fun execute(): UseCaseResult<TokenResponse>
+    fun execute(): UseCaseResult<TokenResponse>
 }
 
 class GetAccessTokenUseCaseImpl(
     private val accessTokenRepository: AccessTokenRepository
 ) : GetAccessTokenUseCase {
 
-    override suspend fun execute(): UseCaseResult<TokenResponse> {
+    override fun execute(): UseCaseResult<TokenResponse> {
         return try {
             val result = accessTokenRepository.getToken()
             UseCaseResult.Success(result)

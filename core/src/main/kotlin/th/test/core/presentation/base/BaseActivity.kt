@@ -25,7 +25,8 @@ abstract class BaseActivity : AppCompatActivity() {
     fun replaceFragment(
         fragment: Fragment,
         addToBackStack: Boolean = false,
-        containerId: Int = containerResId, tag: String
+        containerId: Int = containerResId,
+        tag: String? = null
     ) {
         if (!isFinishing) {
             val fragmentTransaction = supportFragmentManager.beginTransaction()
@@ -42,7 +43,7 @@ abstract class BaseActivity : AppCompatActivity() {
         fragment: Fragment,
         addToBackStack: Boolean,
         containerId: Int = containerResId,
-        tag: String
+        tag: String? = null
     ) {
         if (!isFinishing) {
             val fragmentTransaction = supportFragmentManager.beginTransaction()

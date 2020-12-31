@@ -10,16 +10,12 @@ import th.test.core.DOMAIN_API_URL
 import th.test.core.data.api.BaseOkHttpClientBuilder
 import th.test.core.data.api.BaseRetrofitBuilder
 import th.test.core.data.api.BaseUrl
-import th.test.core.data.interceptor.AuthHeaderInterceptor
 import th.test.core.extension.base64ToPlain
 import th.test.core.provider.PreferenceProvider
 import th.test.core.provider.SharedPreferenceProvider
 
-private const val DI_BASE_URL = "DI_BASE_URL"
-private const val DI_DEFAULT_INTERCEPTOR = "DI_DEFAULT_INTERCEPTOR"
-private const val DI_AUTH_INTERCEPTOR = "DI_AUTH_INTERCEPTOR"
-private const val DI_AUTH_OK_HTTP_CLIENT = "DI_AUTH_OK_HTTP_CLIENT"
-const val DI_AUTH_RETROFIT = "DI_AUTH_RETROFIT"
+const val DI_BASE_URL = "DI_BASE_URL"
+const val DI_DEFAULT_INTERCEPTOR = "DI_DEFAULT_INTERCEPTOR"
 
 val coreModule = module {
 
@@ -30,24 +26,6 @@ val coreModule = module {
 
 
     //-DI API BELOW HERE
-    single(named(DI_AUTH_RETROFIT)) {
-        BaseRetrofitBuilder(
-            baseOkHttpClintBuilder = get(named(DI_AUTH_OK_HTTP_CLIENT)),
-            converterFactory = get(),
-            defaultBaseUrl = get(named(DI_BASE_URL))
-        )
-    }
-
-    single(named(name = DI_AUTH_OK_HTTP_CLIENT)) {
-        BaseOkHttpClientBuilder(
-            interceptor = arrayOf(get(named(name = DI_AUTH_INTERCEPTOR)))
-        ).init()
-    }
-
-    single(named(name = DI_AUTH_INTERCEPTOR)) {
-        AuthHeaderInterceptor()
-    }
-
     //This interceptor created for request that no need to request with Authorization
     single(named(name = DI_DEFAULT_INTERCEPTOR)) {
         BaseInterceptor()

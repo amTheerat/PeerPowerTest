@@ -2,18 +2,18 @@ package th.test.loan.usecase
 
 import th.test.core.utils.UseCaseResult
 import th.test.loan.data.entity.model.LoanModel
+import th.test.loan.data.entity.model.RepaymentSchedulesModel
 import th.test.loan.data.repo.LoanRepository
 import java.lang.Exception
 
 interface GetReviewLoanListUseCase {
     suspend fun execute(
-        id: Int,
         loanAmount: Int,
         loanTerm: Int,
         interestRate: Float,
         startMonth: Int,
         startYear: Int
-    ): UseCaseResult<List<Re>>
+    ): UseCaseResult<List<RepaymentSchedulesModel>>
 }
 
 class GetReviewLoanListUseCaseImpl(
@@ -21,13 +21,12 @@ class GetReviewLoanListUseCaseImpl(
 ) : GetReviewLoanListUseCase {
 
     override suspend fun execute(
-        id: Int,
         loanAmount: Int,
         loanTerm: Int,
         interestRate: Float,
         startMonth: Int,
         startYear: Int
-    ): UseCaseResult<LoanModel> {
+    ): UseCaseResult<List<RepaymentSchedulesModel>> {
         return try {
             val loanResult = loanRepository.getReviewLoanList(
                 loanAmount = loanAmount,

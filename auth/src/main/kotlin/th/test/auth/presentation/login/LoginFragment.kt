@@ -14,7 +14,6 @@ import th.test.auth.R
 import th.test.core.navigator.LoanNavigator
 import th.test.core.presentation.base.BaseActivity
 import th.test.core.presentation.base.BaseFragment
-import th.test.loan.presentation.calculator.LoanCalculatorFragment
 
 class LoginFragment : BaseFragment() {
 
@@ -63,8 +62,7 @@ class LoginFragment : BaseFragment() {
                 clearBackStack()
                 addFragment(
                     fragment = loanNavigator.getLoanCalculatorFragment(),
-                    addToBackStack = true,
-                    tag = LoanCalculatorFragment.TAG
+                    addToBackStack = true
                 )
             }
         })

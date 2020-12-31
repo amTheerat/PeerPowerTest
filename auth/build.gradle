@@ -2,5 +2,4 @@ apply from: '../base_module_config.gradle'
 
 dependencies {
     implementation project(":core")
-    implementation project(":loan")
 }
