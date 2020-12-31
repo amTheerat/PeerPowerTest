@@ -35,7 +35,7 @@ val authModule = module {
             accessTokenRepository = get()
         )
     }
-    
+
     factory<LoginUseCase> {
         LoginUseCaseImpl(
             authRepository = get(),

@@ -8,9 +8,13 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
+import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 import th.test.auth.R
+import th.test.core.navigator.LoanNavigator
+import th.test.core.presentation.base.BaseActivity
 import th.test.core.presentation.base.BaseFragment
+import th.test.loan.presentation.calculator.LoanCalculatorFragment
 
 class LoginFragment : BaseFragment() {
 
@@ -20,6 +24,7 @@ class LoginFragment : BaseFragment() {
     }
 
     private val loginViewModel: LoginViewModel by viewModel()
+    private val loanNavigator: LoanNavigator by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,7 +59,14 @@ class LoginFragment : BaseFragment() {
         })
 
         loginViewModel.presentNext.observe(viewLifecycleOwner, Observer {
-
+            (activity as BaseActivity).apply {
+                clearBackStack()
+                addFragment(
+                    fragment = loanNavigator.getLoanCalculatorFragment(),
+                    addToBackStack = true,
+                    tag = LoanCalculatorFragment.TAG
+                )
+            }
         })
 
         loginViewModel.alertLoginFailed.observe(viewLifecycleOwner, Observer { errorMessage ->

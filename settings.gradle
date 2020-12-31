@@ -1,7 +1,7 @@
-include ':auth'
-include ':loan'
 include ':app',
         ':main',
         ':core',
+        ':loan',
+        ':auth',
         ':testutils'
 rootProject.name = "PeerPowerTest"

@@ -2,10 +2,7 @@ package th.test.loan.data.api
 
 import retrofit2.http.*
 import th.test.loan.data.entity.request.LoanRequest
-import th.test.loan.data.entity.response.LoanResponse
-import th.test.loan.data.entity.response.DeleteLoanResponse
-import th.test.loan.data.entity.response.GetLoanResponse
-import th.test.loan.data.entity.response.GetReviewLoanResponse
+import th.test.loan.data.entity.response.*
 
 interface LoanApi {
 
@@ -26,7 +23,7 @@ interface LoanApi {
     ): GetLoanResponse
 
     @GET("api/loans")
-    suspend fun getLoanList(): GetLoanResponse
+    suspend fun getLoanList(): GetLoanListResponse
 
     @GET("api/loans/preview")
     suspend fun getPreviewLoanList(
