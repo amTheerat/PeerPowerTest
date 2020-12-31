@@ -1,0 +1,65 @@
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+ext {
+    androidAchitechtureVersion = '2.0.0'
+    coroutineVersion = '1.3.1'
+    junitVersion = '4.12'
+    koinVersion = '2.0.1'
+    mockitoCoreVersion = '2.22.0'
+    mockitoInlineVersion = '2.13.0'
+    mockitoKotlinVersion = '2.2.0'
+    retrofitVersion = '2.6.0'
+    multidexVersion = "2.0.1"
+
+    arch = [
+            extensions: "androidx.lifecycle:lifecycle-extensions:$androidAchitechtureVersion"
+    ]
+
+    coroutine = [
+            coroutineAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
+            coroutineCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+    ]
+
+    gson = 'com.google.code.gson:gson:2.8.2'
+
+    support = [
+            appcompatv7    : 'androidx.appcompat:appcompat:1.0.0',
+            design         : 'com.android.support:design:27.1.1',
+            design_material: 'com.google.android.material:material:1.0.0',
+            supportv4      : 'androidx.legacy:legacy-support-v4:1.0.0',
+            cardview       : 'androidx.cardview:cardview:1.0.0',
+            constraint     : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            coreKtx        : 'androidx.core:core-ktx:1.0.2',
+            multidex       : "androidx.multidex:multidex:$multidexVersion"
+    ]
+
+    koin = [
+            koinAndroid         : "org.koin:koin-android:$koinVersion",
+            koinAndroidViewmodel: "org.koin:koin-android-viewmodel:$koinVersion"
+    ]
+
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+
+    okhttpLoggingInterceptor = 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+    retrofit = [
+            retrofit     : 'com.squareup.retrofit2:retrofit:2.6.0',
+            converterGson: 'com.squareup.retrofit2:converter-gson:2.6.0'
+    ]
+
+    test = [
+            junit        : "junit:junit:$junitVersion",
+            koinTest     : "org.koin:koin-test:$koinVersion",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion",
+            mockitoCore  : "org.mockito:mockito-core:$mockitoCoreVersion",
+            mockitoInline: "org.mockito:mockito-inline:$mockitoInlineVersion",
+            archTest     : "androidx.arch.core:core-testing:$androidAchitechtureVersion",
+            coroutineTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineVersion"
+    ]
+}

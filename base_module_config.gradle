@@ -1,0 +1,73 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion project.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode rootProject.ext.version_code
+        versionName rootProject.ext.version_name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "APP_VERSION_CODE", "\"${rootProject.ext.version_code}\""
+        buildConfigField "String", "APP_VERSION_NAME", "\"${rootProject.ext.version_name}\""
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        dev.java.srcDirs += 'src/dev/kotlin'
+        prod.java.srcDirs += 'src/prod/kotlin'
+        staging.java.srcDirs += 'src/staging/kotlin'
+    }
+
+    def modeDimension = 'mode'
+    flavorDimensions modeDimension
+    productFlavors {
+        dev {
+            dimension modeDimension
+        }
+
+        staging {
+            dimension modeDimension
+        }
+
+        prod {
+            dimension modeDimension
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    def ext = rootProject.ext
+
+    // Dependencies for local unit tests
+    testImplementation ext.test.junit
+    testImplementation ext.test.mockitoCore
+    testImplementation ext.test.mockitoKotlin
+    testImplementation ext.test.mockitoInline
+    testImplementation ext.test.archTest
+    testImplementation ext.test.coroutineTest
+    testImplementation ext.test.koinTest
+
+    testImplementation project(':testutils')
+}

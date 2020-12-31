@@ -1,2 +1,4 @@
-include ':app'
+include ':testutils'
+include ':app',
+        ':core'
 rootProject.name = "PeerPowerTest"
