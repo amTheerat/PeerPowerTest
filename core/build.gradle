@@ -32,5 +32,3 @@ dependencies {
     api ext.retrofit.converterGson
     api ext.okhttpLoggingInterceptor
 }
-
-android { sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/raw'] } } }

@@ -41,6 +41,27 @@ android {
         }
     }
 
+    def modeDimension = 'mode'
+    flavorDimensions modeDimension
+    productFlavors {
+        dev {
+            dimension modeDimension
+            applicationId "th.test.core.dev"
+            versionName rootProject.ext.version_name + "-DEV"
+        }
+
+        staging {
+            dimension modeDimension
+            applicationId "th.test.core.staging"
+            versionName rootProject.ext.version_name + "-STAGING"
+        }
+
+        prod {
+            dimension modeDimension
+            applicationId "th.test.core"
+        }
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         dev.java.srcDirs += 'src/dev/kotlin'
