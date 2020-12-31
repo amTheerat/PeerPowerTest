@@ -16,7 +16,7 @@ private const val DI_BASE_URL = "DI_BASE_URL"
 private const val DI_DEFAULT_INTERCEPTOR = "DI_DEFAULT_INTERCEPTOR"
 private const val DI_AUTH_INTERCEPTOR = "DI_AUTH_INTERCEPTOR"
 private const val DI_AUTH_OK_HTTP_CLIENT = "DI_AUTH_OK_HTTP_CLIENT"
-private const val DI_AUTH_RETROFIT = "DI_AUTH_RETROFIT"
+const val DI_AUTH_RETROFIT = "DI_AUTH_RETROFIT"
 
 val coreModule = module {
 

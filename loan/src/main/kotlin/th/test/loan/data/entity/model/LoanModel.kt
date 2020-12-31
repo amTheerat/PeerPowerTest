@@ -2,7 +2,7 @@ package th.test.loan.data.entity.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CreateLoanModel(
+data class LoanModel(
 
     /* Example data
         "id": 23,

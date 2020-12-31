@@ -2,7 +2,7 @@ package th.test.loan.data.entity.request
 
 import com.google.gson.annotations.SerializedName
 
-data class CreateLoanRequest(
+data class LoanRequest(
 
     //Loan amount (1,000-100,000,000THB)
     @SerializedName("loan_amount")
