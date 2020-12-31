@@ -84,4 +84,5 @@ dependencies {
     implementation ext.support.multidex
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':core')
+    implementation project(':main')
 }

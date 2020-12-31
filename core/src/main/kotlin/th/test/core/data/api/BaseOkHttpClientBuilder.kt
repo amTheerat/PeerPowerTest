@@ -3,7 +3,7 @@ package th.test.core.data.api
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.BuildConfig
+import th.test.core.BuildConfig
 import java.util.concurrent.TimeUnit
 
 class BaseOkHttpClientBuilder(private vararg val interceptor: Interceptor) {

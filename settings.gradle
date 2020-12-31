@@ -1,3 +1,4 @@
+include ':loan'
 include ':app',
         ':main',
         ':core',
