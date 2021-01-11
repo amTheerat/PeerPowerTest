@@ -8,14 +8,14 @@ import th.test.core.data.api.BaseRetrofitBuilder
 import th.test.loan.data.api.LoanApi
 import th.test.loan.data.repo.LoanRepository
 import th.test.loan.data.repo.LoanRepositoryImpl
-import th.test.loan.presentation.calculator.LoanCalculatorViewModel
+import th.test.loan.presentation.list.MyLoanListViewModel
 import th.test.loan.usecase.*
 
 val loanModule = module {
 
     //-DI VIEW MODEL BELOW HERE
     viewModel {
-        LoanCalculatorViewModel(
+        MyLoanListViewModel(
             createLoanUseCase = get(),
             deleteLoanUseCase = get(),
             getLoanListUseCase = get(),

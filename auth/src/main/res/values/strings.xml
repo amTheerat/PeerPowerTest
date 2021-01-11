@@ -1,4 +1,12 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="keep_me_logged_in">Keep me logged in</string>
+    <string name="please_check_your_password_and_try_again">Please check your password and try again</string>
+    <string name="account">Account</string>
+    <string name="my_profile">My Profile</string>
+    <string name="name">Name</string>
+    <string name="logout">Logout</string>
+    <string name="failed_to_load_profile">Failed to load profile</string>
 </resources>

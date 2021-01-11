@@ -6,10 +6,8 @@ import org.koin.dsl.module
 import th.test.auth.data.api.AuthApi
 import th.test.auth.data.api.UserApi
 import th.test.auth.data.interceptor.AuthHeaderInterceptor
-import th.test.auth.data.repo.AccessTokenRepository
-import th.test.auth.data.repo.AccessTokenRepositoryImpl
-import th.test.auth.data.repo.AuthRepository
-import th.test.auth.data.repo.AuthRepositoryImpl
+import th.test.auth.data.repo.*
+import th.test.auth.presentation.account.AccountViewModel
 import th.test.auth.presentation.login.LoginViewModel
 import th.test.auth.usecase.*
 import th.test.core.data.api.BaseOkHttpClientBuilder
@@ -29,9 +27,28 @@ val authModule = module {
         )
     }
 
+    viewModel {
+        AccountViewModel(
+            getProfileUseCase = get(),
+            clearAccessTokenUseCase = get()
+        )
+    }
+
     //-DI USECASE BELOW HERE
+    factory<GetProfileUseCase> {
+        GetProfileUseCaseImpl(
+            userRepository = get()
+        )
+    }
+
     factory<CheckLoginUseCase> {
         CheckLoginUseCaseImpl(
+            accessTokenRepository = get()
+        )
+    }
+
+    factory<ClearAccessTokenUseCase> {
+        ClearAccessTokenUseCaseImpl(
             accessTokenRepository = get()
         )
     }
@@ -50,6 +67,12 @@ val authModule = module {
     }
 
     //-DI REPOSITORY BELOW HERE
+    factory<UserRepository> {
+        UserRepositoryImpl(
+            userApi = get()
+        )
+    }
+
     factory<AccessTokenRepository> {
         AccessTokenRepositoryImpl(
             preferenceProvider = get()

@@ -1,4 +1,4 @@
-package th.test.loan.presentation.calculator
+package th.test.loan.presentation.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,27 +6,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_loan_calculator.*
+import kotlinx.android.synthetic.main.fragment_loan_list.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import th.test.core.presentation.base.BaseActivity
 import th.test.core.presentation.base.BaseFragment
 import th.test.loan.R
 import th.test.loan.presentation.adapter.LoanListAdapter
 
-class LoanCalculatorFragment : BaseFragment() {
+class MyLoanListFragment : BaseFragment() {
 
     companion object {
-        const val TAG = "LoanCalculatorFragment"
-        fun getNewInstance(): LoanCalculatorFragment = LoanCalculatorFragment()
+        const val TAG = "MyLoanListFragment"
+        fun getNewInstance(): MyLoanListFragment = MyLoanListFragment()
     }
 
-    private val viewModel: LoanCalculatorViewModel by viewModel()
+    private val viewModel: MyLoanListViewModel by viewModel()
     private lateinit var loanAdapter: LoanListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_loan_calculator, container, false)
+        return inflater.inflate(R.layout.fragment_loan_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,6 +39,12 @@ class LoanCalculatorFragment : BaseFragment() {
     }
 
     private fun initView() {
+        (activity as? BaseActivity)?.apply {
+            setToolbarTitle(getString(R.string.my_loan))
+            hideBackButton()
+            showBottomNav()
+        }
+
         loanAdapter = LoanListAdapter()
         loanRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)

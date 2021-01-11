@@ -16,6 +16,62 @@
         <item name="android:statusBarColor">@android:color/white</item>
     </style>
 
+    <style name="AppToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <!--Font style H1-->
+    <style name="H1">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="H1.DeepCove">
+        <item name="android:textColor">@color/deepCove</item>
+    </style>
+
+    <!--Font style L1-->
+    <style name="L1">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="L1.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="L1.Black">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!--Font style L2-->
+    <style name="L2">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="L2.Black">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="L2.Red">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
+    <!--Font style L3-->
+    <style name="L3">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="L3.Red">
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
     <style name="MaterialTextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textAllCaps">true</item>
         <item name="android:letterSpacing">0</item>

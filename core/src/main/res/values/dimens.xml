@@ -4,6 +4,6 @@
     <dimen name="defaultViewElevation">2dp</dimen>
     <dimen name="defaultViewLittleMargin">7dp</dimen>
     <dimen name="defaultButtonHeight">52dp</dimen>
-    <dimen name="defaultViewRadius">15dp</dimen>
+    <dimen name="defaultViewRadius">10dp</dimen>
 </resources>
 

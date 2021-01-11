@@ -13,7 +13,7 @@ class LoginViewModel(
     val showLoading = SingleLiveEvent<Boolean>()
     val presentNext = SingleLiveEvent<Unit>()
 
-    val alertLoginFailed = SingleLiveEvent<String>()
+    val alertLoginFailed = SingleLiveEvent<Unit>()
 
     fun login(
         username: String,
@@ -31,7 +31,7 @@ class LoginViewModel(
             } else if (loginResult is UseCaseResult.Error) {
                 showLoading.value = false
                 loginResult.exception.message?.let { errorMessage ->
-                    alertLoginFailed.value = errorMessage
+                    alertLoginFailed.call()
                 }
             }
         }

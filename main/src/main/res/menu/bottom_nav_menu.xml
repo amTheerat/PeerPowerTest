@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionMyLoan"
+        android:enabled="true"
+        android:icon="@drawable/bottom_nav_my_loan_state"
+        android:title="@string/my_loan" />
+    <item
+        android:id="@+id/actionAccount"
+        android:enabled="true"
+        android:title="@string/account"
+        android:icon="@drawable/bottom_nav_account_state"
+        app:showAsAction="ifRoom" />
+</menu>

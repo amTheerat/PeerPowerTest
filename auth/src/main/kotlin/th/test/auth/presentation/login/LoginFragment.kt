@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -40,10 +41,16 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun initView() {
+        (activity as? BaseActivity)?.apply {
+            setToolbarTitle(getString(R.string.login))
+            hideBackButton()
+            hideBottomNav()
+        }
+
         loginButton.setOnClickListener {
             loginViewModel.login(
-                username = "bob@peerpower.co.th",
-                password = "1"
+                username = emailEditText.text.toString(),
+                password = passwordEditText.text.toString()
             )
         }
     }
@@ -61,17 +68,22 @@ class LoginFragment : BaseFragment() {
             (activity as BaseActivity).apply {
                 clearBackStack()
                 addFragment(
-                    fragment = loanNavigator.getLoanCalculatorFragment(),
+                    fragment = loanNavigator.getLoanListFragment(),
                     addToBackStack = true
                 )
             }
         })
 
-        loginViewModel.alertLoginFailed.observe(viewLifecycleOwner, Observer { errorMessage ->
-            showSnackBar(
-                message = errorMessage,
-                duration = Snackbar.LENGTH_LONG
-            )
+        loginViewModel.alertLoginFailed.observe(viewLifecycleOwner, Observer {
+            context?.let {
+                passwordEditText.setTextColor(
+                    ContextCompat.getColor(it, android.R.color.holo_red_light)
+                )
+                passwordTextView.setTextColor(
+                    ContextCompat.getColor(it, android.R.color.holo_red_light)
+                )
+            }
+            loginFailedTextView.visibility = View.VISIBLE
         })
     }
 }

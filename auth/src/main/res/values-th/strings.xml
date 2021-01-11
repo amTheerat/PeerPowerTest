@@ -1,0 +1,12 @@
+<resources>
+    <string name="login">เข้าสู่ระบบ</string>
+    <string name="email">อีเมล</string>
+    <string name="password">รหัสผ่าน</string>
+    <string name="keep_me_logged_in">ให้ฉันเข้าสู่ระบบ</string>
+    <string name="please_check_your_password_and_try_again">โปรดตรวจสอบรหัสผ่านและลองใหม่อีกครั้ง</string>
+    <string name="account">บัญชี</string>
+    <string name="my_profile">โปรไฟล์ของฉัน</string>
+    <string name="name">ชื่อ</string>
+    <string name="logout">Logout</string>
+    <string name="failed_to_load_profile">เกิดข้อผิดพลาดในการโหลดโปรไฟล์</string>
+</resources>

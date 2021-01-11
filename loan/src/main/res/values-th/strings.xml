@@ -1,0 +1,7 @@
+<resources>
+    <string name="my_loan">บัญชี</string>
+    <string name="loan">เงินกู้</string>
+    <string name="loan_amount">ยอดรวมเงินกู้</string>
+    <string name="loan_term">ระยะเวลา</string>
+    <string name="interest_rate">ดอกเบี้ย</string>
+</resources>

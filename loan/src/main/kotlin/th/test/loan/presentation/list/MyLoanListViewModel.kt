@@ -1,4 +1,4 @@
-package th.test.loan.presentation.calculator
+package th.test.loan.presentation.list
 
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.launch
@@ -9,7 +9,7 @@ import th.test.loan.data.entity.model.LoanModel
 import th.test.loan.data.entity.model.RepaymentSchedulesModel
 import th.test.loan.usecase.*
 
-class LoanCalculatorViewModel(
+class MyLoanListViewModel(
     private val createLoanUseCase: CreateLoanUseCase,
     private val deleteLoanUseCase: DeleteLoanUseCase,
     private val getLoanListUseCase: GetLoanListUseCase,

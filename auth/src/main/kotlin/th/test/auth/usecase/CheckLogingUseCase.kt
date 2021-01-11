@@ -14,7 +14,7 @@ class CheckLoginUseCaseImpl(
     override fun execute(): UseCaseResult<Nothing> {
         return try {
             val result = accessTokenRepository.getToken()
-            if (result.access_token.isEmpty() && result.access_token.isEmpty()) {
+            if (result.access_token.isEmpty() && result.refresh_token.isEmpty()) {
                 UseCaseResult.Error(Throwable("HAVE NO LOGIN"))
             } else {
                 UseCaseResult.Complete

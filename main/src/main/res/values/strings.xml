@@ -1,1 +1,4 @@
-<resources></resources>
+<resources>
+    <string name="my_loan">MY LOAN</string>
+    <string name="account">ACCOUNT</string>
+</resources>

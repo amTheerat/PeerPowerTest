@@ -1,7 +1,20 @@
 package th.test.auth.data.entity.model
 
+import com.google.gson.annotations.SerializedName
+
 data class UserModel(
-    var id: Int? = null,
-    var name: String? = null,
-    var email: String? = null
+    @SerializedName("id")
+    var id: Int,
+
+    @SerializedName("name")
+    var name: String,
+
+    @SerializedName("email")
+    var email: String,
+
+    @SerializedName("created_at")
+    var created_at: String,
+
+    @SerializedName("updated_at")
+    var updated_at: String
 )

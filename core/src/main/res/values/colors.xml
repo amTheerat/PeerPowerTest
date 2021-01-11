@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009FDF</color>
-    <color name="colorPrimaryDark">#005e91</color>
-    <color name="colorAccent">#4f5767</color>
+    <color name="colorPrimary">#051243</color>
+    <color name="colorPrimaryDark">#051243</color>
+    <color name="colorAccent">#051243</color>
     <color name="white70">#b3ffffff</color>
     <color name="dodgerBlue">#36A5FF</color>
     <color name="dustyGray">#999999</color>
+    <color name="athensGray">#EEEFF2</color>
+    <color name="deepCove">#051243</color>
 </resources>

@@ -6,4 +6,6 @@ interface LoginNavigator {
 
     fun getLoginFragment(): Fragment
 
+    fun getAccountFragment(): Fragment
+
 }

@@ -2,40 +2,70 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/idTextView"
-        android:layout_width="match_parent"
+        style="@style/L1.Black"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/defaultViewMargin"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/defaultViewMargin"
+        app:layout_constraintEnd_toStartOf="@id/arrowImageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="idTextView" />
 
     <TextView
         android:id="@+id/amountTextView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="@id/idTextView"
+        app:layout_constraintStart_toStartOf="@id/idTextView"
         app:layout_constraintTop_toBottomOf="@+id/idTextView"
         tools:text="amountTextView" />
 
     <TextView
         android:id="@+id/termTextView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="@id/idTextView"
+        app:layout_constraintStart_toStartOf="@id/idTextView"
         app:layout_constraintTop_toBottomOf="@+id/amountTextView"
         tools:text="termTextView" />
 
     <TextView
         android:id="@+id/interestTextView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="@id/idTextView"
+        app:layout_constraintStart_toStartOf="@id/idTextView"
         app:layout_constraintTop_toBottomOf="@+id/termTextView"
         tools:text="interestTextView" />
+
+    <ImageView
+        android:id="@+id/arrowImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/defaultViewMargin"
+        android:rotation="180"
+        android:src="@drawable/ic_back"
+        android:tint="@color/dustyGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
         android:background="@color/dustyGray"
         app:layout_constraintTop_toBottomOf="@id/interestTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,6 @@ import androidx.fragment.app.Fragment
 
 interface LoanNavigator {
 
-    fun getLoanCalculatorFragment(): Fragment
+    fun getLoanListFragment(): Fragment
 
 }

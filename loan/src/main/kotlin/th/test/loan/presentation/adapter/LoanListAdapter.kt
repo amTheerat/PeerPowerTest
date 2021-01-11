@@ -42,19 +42,19 @@ class LoanListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         fun bind(loanModel: LoanModel) {
             itemView.apply {
                 loanModel.id?.let {
-                    idTextView.text = it.toString()
+                    idTextView.text = context.getString(R.string.loan).plus(" #$it")
                 }
 
                 loanModel.loan_amount?.let {
-                    amountTextView.text = it.toString()
+                    amountTextView.text = context.getString(R.string.loan_amount).plus(" : $it")
                 }
 
                 loanModel.loan_term?.let {
-                    termTextView.text = it.toString()
+                    termTextView.text = context.getString(R.string.loan_term).plus(" : $it")
                 }
 
                 loanModel.interest_rate?.let {
-                    interestTextView.text = it.toString()
+                    interestTextView.text = context.getString(R.string.interest_rate).plus(" : $it")
                 }
             }
         }
